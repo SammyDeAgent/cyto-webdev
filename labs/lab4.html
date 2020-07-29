@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang ="en-US ">
+<head>
+  <title>UCCD2223 Lab 4</title>
+  <link rel="shortcut icon"  href="../img/cyto.ico" />
+  <link rel="stylesheet"     href="../css/index_style.css"/>
+    
+  <meta charset="UTF-8">
+  <meta name="description"    content="Alpha Build Version var 1.0">
+  <meta name="keywords"       content="HTML, CSS, JavaScript">
+  <meta name="revised"        content="Test1, 27/6/2020">
+  <meta name="author"         content="Sammy">
+  <meta name="viewport"       content="width=device-width, initial-scale=1.0">
+  <meta name="image"          content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="UCCD2223 Cytokine Test Site">
+  <meta property="og:title"       content="Lab Practical 4">
+  <meta property="og:description" content="Alpha Build Version var 1.0">
+  <meta property="og:url"         content="https://uccd2223-cytokine.azurewebsites.net/uccd2223labportal/labs/lab4.html">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:image"       content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+  <style>
+      code{
+        display:block;
+        box-sizing: border-box;
+        border: 3px outset silver;
+        padding: 10px;
+        margin-top: 5px;
+        color: chartreuse;
+        background-color: black;
+      }
+  </style>
+</head>
+<body>
+    <script src="../js/lab4.js"></script>
+    <a name="top"></a>
+    <div class="header">
+        <div id = "fonttab">
+                <h1> Lab Practical 4 </h1>
+                <p>Alpha Build Version var 1.0</p>
+        </div>
+        <div class ="topnav">
+            <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Back</a>
+        </div>
+    </div>
+    <div class = "card">
+        <h1>JavaScript Type</h1>
+        <ul>
+            <li>JavaScript in Head</li>
+            <li>JavaScript in Body</li>
+            <li>JavaScript in External</li>
+        </ul>
+        <p>Example of Javascript Button</p>
+        <button onclick="HelloThere();">Click Me!</button>
+        <br><br>
+        <p>Another example with more in-depth script</p>
+        <button onclick="confirm1();">Confirm</button>
+        <code><p id="cp1">Press Something!</p></code>
+    </div>
+    <div class="card">
+        <h1>Exercise 2</h1>
+        <h3>Tax Calculation</h3>
+        <button onclick="taxCal();">Insert Income</button>
+        <code><p id="ex2-1">Enter your income first!</p></code>
+        <br>
+
+        <h3>Integer Detection</h3>
+        
+        <button onclick="intDect();">Insert 3 Numbers</button>
+        <code>
+            <p id="ex2-2Z">Zero entered: -</p>
+            <p id="ex2-2P">Positive numbers entered: -</p>
+            <p id="ex2-2N">Negative numbers entered: -</p>
+        </code>
+        <br>
+
+        <h3>Even or Odd Function</h3>
+        <button onclick="isEven();">Enter Integer</button>
+        <code><p id="ex2-3">Enter an integer!</p></code>
+    </div>
+    <div class="card">
+        <h1>Exercise 3</h1>
+        <h3>Average Score Calculator</h3>
+        <button onclick="avgNum();">Enter 5 Test Score</button>
+        <code><p id="ex3-1">Enter some test scores!</p></code>
+        <br>
+
+        <h3>Project Rate - Coming 6 Years: On Start $2500</h3>
+        <button onclick="pRate();">Calculate PRate</button>
+        <code><p id="ex3-2">Awaiting initialization...</p></code>
+        <br>
+
+        <h3>Calories Timer - 5 minutes interval</h3>
+        <button onclick="calTime();">Calculate Calories</button>
+        <code><p id="ex3-3">Awaiting initialization...</p></code>
+    </div>
+    <div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
+</body>
+</html>

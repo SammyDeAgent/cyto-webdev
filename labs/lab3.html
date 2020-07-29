@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang ="en-US ">
+<head>
+  <title>UCCD2223 Lab 3</title>
+  <link rel="shortcut icon"  href="../img/cyto.ico" />
+  <link rel="stylesheet"     href="../css/index_style.css"/>
+  <link rel="stylesheet"     href="../css/external.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Rosario:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    
+  <meta charset="UTF-8">
+  <meta name="description"    content="Alpha Build Version var 1.0">
+  <meta name="keywords"       content="HTML, CSS, JavaScript">
+  <meta name="revised"        content="Test1, 27/6/2020">
+  <meta name="author"         content="Sammy">
+  <meta name="viewport"       content="width=device-width, initial-scale=1.0">
+  <meta name="image"          content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="UCCD2223 Cytokine Test Site">
+  <meta property="og:title"       content="Lab Practical 3">
+  <meta property="og:description" content="Alpha Build Version var 1.0">
+  <meta property="og:url"         content="https://uccd2223-cytokine.azurewebsites.net/uccd2223labportal/labs/lab3.html">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:image"       content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+</head>
+<body>
+    <a name="top"></a>
+    <div class="header">
+        <div id = "fonttab">
+                <h1> Lab Practical 3 </h1>
+                <p>Alpha Build Version var 1.0</p>
+        </div>
+        <div class ="topnav">
+            <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Back</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1>CSS Type Examples</h1>
+        <p>Refer to HTML page source</p>
+        <br>
+        <p style="background: chartreuse; display: inline-block;">CSS Inline Style Example</p><br>
+        <style type="text/css">
+            .embeddedEx{
+                background: blue;
+                display: inline-block;
+                color: white;
+            }
+        </style>
+        <p class="embeddedEx">CSS Embedded Style Example</p><br>
+        <p id="externalEx">CSS External Style Example</p>
+    </div>
+    <div class="card">
+        <h1>CSS Selectors</h1>
+        <style type="text/css">
+        *{
+            font-size: 14px Tahoma;
+        }
+        span{
+            border: 10px solid red;
+        }
+        .classS{
+            color: green;
+            margin-top: 10px;
+        }
+        #IDS{
+            font-weight: bold;
+        }
+        #divA p{
+            background-color: lightgreen;
+        }
+        #divA > p{
+            color: red;
+        }
+        h3 + p {
+		    color: blue;
+		    font-size: 18px;
+	    }
+	    ul.task + p {
+		    color: #f0f;
+		    text-indent: 30px;
+	    }
+        </style>
+        <p>Universal Selector</p>
+        <span>Type Selector</span>
+        <div class="classS">Class Selector</div>
+        <div id="IDS">ID Selector</div>
+        <div id="divA">
+            <p>Descendant Selector</p>
+            <p>Child Selector</p>
+        </div><hr>
+
+        <h3>Adjacent Sibling Selector</h3>
+	    <p>This is a paragraph.</p>
+	    <p>This is another paragraph.</p>
+	    <ul class="task">
+		    <li>Task 1</li>
+		    <li>Task 2</li>
+		    <li>Task 3</li>
+	    </ul>
+	    <p>This is one more paragraph.</p>
+        <p>This is also a paragraph.</p><hr>
+        
+        <style>
+            h4 ~ p {
+                color: blue;
+                font-size: 18px;
+            }
+            ul.task ~ .e {
+                color: #f0f;
+                text-indent: 30px;
+            }
+        </style>
+        <h4>General Sibling Selector</h4>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <ul class="task">
+            <li>Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+        </ul>
+        <div class="e">This is one more paragraph.</div>
+        <div class="e">This is also a paragraph.</div>
+    </div>
+
+    <div class='card'>
+        <h1>CSS Multimedia</h1>
+        <style type="text/css">
+            @media screen and (min-width:1046px)
+            {
+               .divM
+                {
+                    -webkit-column-count: 4;
+                    column-count: 4;
+                    -webkit-column-gap: 30px;
+                    column-gap: 30px;
+                    -webkit-column-rule: 1px outset black;
+                    column-rule: 1px outset black;
+                }
+            }
+            
+            @media screen and (min-width:800px) and (max-width: 1046px)
+            {
+                .divM
+                {
+                    -webkit-column-count: 3;
+                    column-count: 3;
+                    -webkit-column-gap: 30px;
+                    column-gap: 30px;
+                    -webkit-column-rule: 1px outset black;
+                    column-rule: 1px outset black;
+                }
+            }      
+            
+            @media screen and (min-width:400px) and (max-width: 800px)
+            {
+                .divM
+                {
+                    -webkit-column-count: 2;
+                    column-count: 2;
+                    -webkit-column-gap: 30px;
+                    column-gap: 30px;
+                    -webkit-column-rule: 1px outset black;
+                    column-rule: 1px outset black;
+                }
+            }
+            @media screen and (max-width: 320px) {
+            .divM {
+                -webkit-column-count: 1;
+                column-count: 1;
+            }
+        }
+        </style>
+        <header>
+            <h1>Computers, Hardware and Software</h1>
+        </header>
+        <div class="divM">
+            <p>
+                A computer is a device that can perform computations and make logical decisions
+                phenomenally faster than human beings can. Many of today's personal computers can
+                perform billions of calculations in one second&mdash;more than a human can perform
+                in a lifetime. Supercomputers are already performing thousands of trillions (quadrillions)
+                of instructions per second! To put that in perspective, a quadrillion-instruction-per-second
+                computer can perform in one second more than 100,000 calculations for every person
+                on the planet! And&mdash;these "upper limits" are growing quickly!
+            </p>
+            <p>
+                Computers process data under the control of sets of instructions called computer
+                programs. These programs guide the computer through orderly sets of actions specified
+                by people called computer programmers. The programs that run on a computer are referred
+                to as software. In this book, you'll learn today's key programming methodology that's
+                enhancing programmer productivity, thereby reducing software-development costs&mdash;object-oriented
+                programming.
+            </p>
+            <p>
+                A computer consists of various devices referred to as hardware (e.g., the keyboard,
+                screen, mouse, hard disks, memory, DVDs and processing units). Computing costs are
+                dropping dramatically, owing to rapid developments in hardware and software technologies.
+                Computers that might have filled large rooms and cost millions of dollars decades
+                ago are now inscribed on silicon chips smaller than a fingernail, costing perhaps
+                a few dollars each. Ironically, silicon is one of the most abundant materials&mdash;it's
+                an ingredient in common sand. Silicon-chip technology has made computing so economical
+                that more than a billion general-purpose computers are in use worldwide, and this
+                is expected to double in the next few years.
+            </p>    
+            <p>
+                Computer chips (microprocessors) control countless devices. These embedded systems
+                include anti-lock brakes in cars, navigation systems, smart home appliances, home
+                security systems, cell phones and smartphones, robots, intelligent traffic intersections,
+                collision avoidance systems, video game controllers and more. The vast majority
+                of the microprocessors produced each year are embedded in devices other than general-
+                purpose computers.
+            </p>
+            <footer>
+                <em>&copy; 2012 by Pearson Education, Inc. 
+                   All Rights Reserved.</em>
+            </footer>    
+    </div>
+    <hr>
+    <style type = "text/css">
+        .flexer
+        { 
+           display: flex;
+           flex-direction: row;
+        }
+        @media (max-width: 700px) {
+        .flexer {   
+                flex-direction: column;
+            }
+        }
+        .flexer > div 
+        {  
+           flex: 25%;
+           border: 2px solid black;
+           margin: 10px -10px 10px 0px;
+           padding: 20px 20px 20px 20px;
+           
+        }
+        .flexer > div{ background-color: lightgrey; } 
+        .flexer > div:hover { 
+           flex: 50%;color: white; font-weight: bold; }
+           .flexer > div:nth-child(1):hover { background-color: royalblue; }
+           .flexer > div:nth-child(2):hover { background-color: crimson; }
+        .flexer > div:nth-child(3):hover { background-color: yellow; color:black;}
+        .flexer > div:nth-child(4):hover { background-color: darkgreen; }
+        .p1 { height: 250px; overflow: hidden; font-family: "Rosario" }
+    </style>
+    <div class = "flexer">
+            <div><img src = "../img/GPP.png" alt = "Good programming practice icon">
+               <div class="p1">Good Programming Practices call attention to techniques that 
+               will help you produce programs that are clearer, more 
+               understandable and more maintainable.</div></div>
+            <div><img src = "../img/EPT.png" alt = "Error prevention tip icon">
+                <div class="p1">Error-Prevention Tips contain suggestions for exposing bugs 
+               and removing them from your programs; many describe aspects of 
+               programming that prevent bugs from getting into programs in 
+               the first place.</div></div>
+               <div><img src = "../img/CPE.png" alt = "Common programming error icon">
+                <div class="p1">Common Programming Errors point out the errors that students 
+                tend to make frequently. These Common Programming Errors reduce 
+                the likelihood that you'll make the same mistakes.</div></div>
+             <div><img src = "../img/SEO.png" 
+                alt = "Software engineering observation icon"><div class="p1">Software 
+                Engineering Observations highlight architectural and design 
+                issues that affect the construction of software systems, 
+                especially large-scale systems.</div></div>
+    </div>
+    </div>
+    <div class="card">
+        <h1>Exercise 4</h1>
+        <h2>World of Disney</h2>
+        <div style="background-color: skyblue;">        
+        <style>
+            .Head01{
+                float:left;
+                width:30%;
+            }
+            .card .Head01{
+                position: relative;
+                top: -10px;
+                left: 600px;
+                color: blue;
+            }  
+            article header{
+                color: purple;
+            }
+            section{
+                margin: 20px;
+            }
+            #sec1{
+                float: right;
+                width: 40%;
+            }
+            #sec2 figcaption{
+                color:red;
+            }
+            figure{
+                margin: 10px;
+                text-align: center;
+            }
+            figure img{
+                border: 2px outset navy;
+                padding: 5px;
+            }
+        </style>
+        <div class="Head01">
+            <h2>Disney Land - A World of Dreams</h2>
+        </div>
+        <section id="sec1">
+            <br><br>
+            <figure>
+                <img src="../img/fun.jpg" alt="disney fun" width="400" height="300" />
+                <figcaption>Disney World</figcaption>
+            </figure>
+            <article>
+                <header>
+                    <h2>Fun @ Disney</h2>
+                </header>
+                <p>
+                    Grab your camera and get ready to Meet’n’Greet all your favourite Disney Characters for an encounter that’s unforgettable for all ages. To help you find them for a hug, an autograph and a photo, we’ve included when and where you can meet your favourite Disney Characters in the Disney Parks. Say cheese!
+                </p>
+            </article>
+        </section>
+        <section id="sec2">
+            <figure>
+                <img src="../img/disney.jpg" alt="disney land" width="600" height="300" />
+                <figcaption>Disney Land &reg;</figcaption>
+            </figure>
+            <article>
+                <header>
+                    <h3>Disney Land</h3>
+                </header>
+                <p>
+                    Enter a magical kingdom where you can sail with pirates, explore exotic jungles, meet fairy-tale princesses, dive under the ocean and rocket through the stars—all in the same day! Disneyland Park is a beloved Southern California destination where generations of families have made their Disney dreams come true. Opened in 1955, Walt Disney’s original theme park is divided into 8 extravagantly themed lands—Main Street, U.S.A., Tomorrowland, Fantasyland, Mickey's Toontown, Frontierland, Critter Country, New Orleans Square and Adventureland.
+                </p>
+            </article>
+        </section>    
+        </div>
+        
+    </div>
+    <div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+  }
+body{
+    font: 14px Tahoma;
+    padding: 0px;
+    margin: 0px;
+    /*background: #f1f1f1;*/
+    background: #DCDCDC
+}
+.header {
+    background-color: #404040;
+    color: white;
+    text-align: left justify;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-left:0px;
+}
+.imgcard {
+    background-color: #aaa;
+    padding: 20px;
+    display: inline-block;
+  }
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    display: block;
+  }
+.footer {
+    padding: 20px;
+    text-align: center;
+    /*background: #ddd;*/
+    background: #A9A9A9;
+    margin-top: 20px;
+  }
+
+.button{
+    background-color:#7289da;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display:  inline-block;
+    cursor:    pointer;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.button:hover{
+    background-color: gray;
+    color: white;
+}
+
+.topnav{
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color:  	#778899 ;
+  color: white;
+}
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#fonttab{
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.column {
+  float: left;
+}
+.column.side {
+  width: 30%;
+}
+.column.middle {
+  width: 70%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.link
+{
+   color:yellow;
+   text-decoration: none; 
+   background-color: none;
+}

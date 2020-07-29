@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang ="en-US ">
+<head>
+    <title>UCCD2223 Lab 5</title>
+    <link rel="shortcut icon" href="../img/cyto.ico" />
+    <link rel="stylesheet"     href="../css/index_style.css"/>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="description"    content="Alpha Build Version var 1.0">
+    <meta name="keywords"       content="HTML, CSS, JavaScript">
+    <meta name="revised"        content="Test1, 27/6/2020" />
+    <meta name="author"         content="Sammy">
+    <meta name="viewport"       content="width=device-width, initial-scale=1.0">
+    <meta name="image"          content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:site_name"   content="UCCD2223 Cytokine Test Site">
+    <meta property="og:title"       content="Lab Practical 5">
+    <meta property="og:description" content="Alpha Build Version var 1.0">
+    <meta property="og:url"         content="https://uccd2223-cytokine.azurewebsites.net/labs/lab5.html">
+    <meta property="og:locale"      content="en_US">
+    <meta property="og:image"       content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+    <style>
+        code{
+          display:block;
+          box-sizing: border-box;
+          border: 3px outset silver;
+          padding: 10px;
+          margin-top: 5px;
+          color: chartreuse;
+          background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <a name="top"></a>
+    <div class="header">
+        <div id = "fonttab">
+                <h1>Lab Practical 5 </h1>
+                <p>Alpha Build Version var 1.0</p>
+        </div>
+        <div class ="topnav">
+            <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Back</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1>HTML DOM and Event Attributes</h1>
+        <p> Refer to source code documentation for futhur details.</p><br>
+        <h3>HTML Event Attributes Method</h3>
+        <button onclick="display1()">Click Me!</button>
+        <code><p id="ex1-1">Awaiting initialization...</p></code>
+        <script>
+            function display1(){
+                var doc;
+                var result = confirm("Press a button!");
+                if(result)
+                    doc = "OK was pressed.";
+                else
+                    doc = "Cancel was pressed";
+                document.getElementById("ex1-1").innerHTML = doc;
+            }
+        </script><br>
+
+        <h3>HTML DOM Method</h3>
+        <button id="btn1">Assign Method</button>
+        <code><p id="ex1-2">Awaiting initialization...</p></code>
+        <script>
+            document.getElementById("btn1").onclick = display2;
+            function display2(){
+                var doc;
+                var result = confirm("Press a button!");
+                if(result)
+                    doc = "OK was pressed.";
+                else
+                    doc = "Cancel was pressed";
+                document.getElementById("ex1-2").innerHTML = doc;
+            }
+        </script><br>
+
+        <h3>Javascript HTML DOM EventListener Method</h3>
+        <button id="btn2">JS EventListener</button>
+        <code><p id="ex1-3">Awaiting initialization...</p></code>
+        <script>
+            document.getElementById("btn2").addEventListener("click",display3);
+            function display3(){
+                var doc;
+                var result = confirm("Press a button!");
+                if(result)
+                    doc = "OK was pressed.";
+                else
+                    doc = "Cancel was pressed";
+                document.getElementById("ex1-3").innerHTML = doc;
+            }
+            document.getElementById("btn2").removeEventListener("click",display);
+        </script><br>
+
+        <h3>Javascript DOM Event Form</h3>
+        <form onsubmit="form1(event)">
+            Enter name: 
+            <input type="text" name="fname" id="fname" required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex1-4">Please enter your last name.</p></code>
+        <script>
+            function form1(event){
+                event.preventDefault();
+                document.getElementById("ex1-4").innerHTML = 'Welcome back, ' + 
+                document.getElementById("fname").value + ".";
+            }
+        </script><br>
+
+        <h3>jQuery DOM Event</h3>
+        <button id="btn3">Click Me!</button>
+        <code><p id="ex1-5">Awaiting initialization...</p></code>
+        <script>
+            $(function(){
+                $('#btn3').click(function(){
+                    var doc;
+                    var result = confirm("Press a button!");
+                    if(result)
+                        doc = "OK was pressed.";
+                    else
+                        doc = "Cancel was pressed";
+                    $("#ex1-5").text(doc);
+                });
+            });
+        </script><br>
+
+        <h3>jQuery DOM Event Form</h3>
+        <form id="formjQ">
+            Enter armory code:
+            <input type="text" name="amCode" id="amCode" required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex1-6">Please enter armory code.</p></code>
+        <script>
+            $(function(){
+                $("#formjQ").submit(function(event){
+                    event.preventDefault();
+                    $("#ex1-6").html(
+                        "Armory Code: " + $("#amCode").val() + " accepted. <br/><br/>" +
+                        "Weapon TAG >> M4A4<br/>" +
+                        "Weapon EQU >> RDS Scope, 5.56 Atlas Suppressor, Vertical Grip<br/>"
+                    );
+                });
+            });
+        </script>
+    </div>
+
+    <div class="card">
+        <h1>Excerise 2</h1>
+        <h3>Weighting Program</h3>
+        <form id="form2-1">
+            Enter Mass (in KG): 
+            <input type="text" name="mass" id="mass" required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex2-1">Please enter mass of object.</p><p id="wp"></p></code>
+        <script>
+            $(function(){
+                $("#form2-1").submit(function(event){
+                    event.preventDefault();
+                    var mass = parseFloat($("#mass").val());
+                    var weight = mass*9.8;
+                    var message = "";
+                    if(weight <= 10){
+                        $("#wp").css("color","green");
+                        message = "Object is too light!";
+                    }
+                    else if(weight >= 1000){
+                        $("#wp").css("color","red");
+                        message = "Object is too heavy!";
+                    }   
+                    $("#ex2-1").html(
+                        "Object weight in newton: " + weight.toFixed(2) + "<br/>"
+                    );
+                    $("#wp").html(
+                        message
+                    );
+                });
+            });
+        </script><br>
+
+        <h3>jQuery Simple Animation</h3>
+        <img src="../img/lab5/flower0.JPG" alt="animation" id="flowerA">
+        <br>
+        <input type="button" value="Show" id="btnShow">
+        <input type="button" value="Hide" id="btnHide">
+        <input type="button" value="Grow" id="btnGrow">
+        <script>
+            var frame = 1;
+            $(function(){
+                $("#btnShow").click(function(){
+                    $("#flowerA").show();
+                });
+                $("#btnHide").click(function(){
+                    $("#flowerA").hide();
+                });
+                $("#btnGrow").click(function(){
+                    $("#flowerA").show();
+                    if(frame == 13){
+                        $("#flowerA").attr("src","../img/lab5/flower" + 0 + ".JPG");
+                        frame = 0;
+                    }
+                    else if(frame<13){
+                        $("#flowerA").attr("src","../img/lab5/flower" + frame + ".JPG");
+                        frame++;
+                    }
+                });
+            });
+        </script><br><br>
+
+        <h3>Radio - Plane Choice</h3>
+        <label>Plane</label><br><br>
+        <input type="radio" name="rp" id="m152" value="152">Model 152</input>
+        <input type="radio" name="rp" id="m172" value="172">Model 172</input>
+        <input type="radio" name="rp" id="m182" value="182">Model 182</input>
+        <input type="radio" name="rp" id="m210" value="210">Model 210</input>
+        <script>
+            $(function(){
+                $("input:radio[name=rp]").on("click",function(){
+                    if($(this).is(':checked')){
+                        var choice = $(this).val();
+                        planeChoice(parseInt(choice));
+                    };
+                });
+            });
+            function planeChoice(plane){
+                switch(plane){
+                    case 152:
+                        alert("A small two-place airplane for flight training.");
+                        break;
+                    case 172:
+                        alert("The smaller of two four-place airplanes.");
+                        break;
+                    case 182:
+                        alert("The larger of two four-place airplanes.");
+                        break;
+                    case 210:
+                        alert("A six-place high-performance airplane.");
+                        break;
+                    default:
+                        alert("Error, JS Case is not recognized.");
+                        break;
+                }
+            }
+        </script>
+    </div>
+
+    <div class="card">
+        <h1>Exercise 3</h1>
+        <h3>Employee Gross Pay Calculation</h3>
+        <form id="form3-1">
+            Employee's Sale:
+            <input type="text" name="eSale" id="eSale" required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex3-1">Please enter employee's sale.</p></code>
+        <script>
+            $(function(){
+                $("#form3-1").submit(function(event){
+                    event.preventDefault();
+                    var sale = parseFloat($("#eSale").val());
+                    const baseP = 900;
+                    $("#ex3-1").html(
+                        '<pre>' +
+                        'PAYMENT<br>' +
+                        "Commission:    " + (sale*0.06).toFixed(2) + '<br>' +
+                        "Gross Pay:     " + (baseP + (sale*0.06)).toFixed(2) + '<br>' +
+                        "Deductions:    " + ((baseP + (sale*0.06))*0.18).toFixed(2) + '<br>' +
+                        "Net Pay:       " + ((baseP + (sale*0.06)) - ((baseP + (sale*0.06))*0.18)).toFixed(2) + '<br><br>' +
+                        'BUDGET<br>' +
+                        "Housing:       " + (((baseP + (sale*0.06)) - ((baseP + (sale*0.06))*0.18))*0.3).toFixed(2) + '<br>' +
+                        "Food n Cloths: " + (((baseP + (sale*0.06)) - ((baseP + (sale*0.06))*0.18))*0.15).toFixed(2) + '<br>' +
+                        "Entertainment: " + (((baseP + (sale*0.06)) - ((baseP + (sale*0.06))*0.18))*0.5).toFixed(2) + '<br>' +
+                        "Miscellaneius: " + (((baseP + (sale*0.06)) - ((baseP + (sale*0.06))*0.18))*0.05).toFixed(2) + '<br>' +
+                        '<pre>'
+                    );
+                });
+            });
+        </script><br>
+
+        <h3>Sleight of Hand</h3>
+        <p>Flex Box is bugged in Chromium based web, try this page in firefox instead.</p>
+        <style>
+            #carding{
+                display: -webkit-box; 
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex; 
+                display: flex;
+                min-height: 0px;
+            }
+        </style>
+        </style>
+        <div id="carding" style="display: inline-flex; width: 100%;">
+            <img src="../img/lab5/8_Diamonds.jpg" alt="Eight of Diamonds">
+            <img src="../img/lab5/2_Clubs.jpg" alt="Two of Clubs">
+            <img src="../img/lab5/King_Spades.jpg" alt="King of Spades">
+            <img src="../img/lab5/Ace_Spades.jpg" alt="Ace of Spades">
+            <img src="../img/lab5/Joker_Black.jpg" alt="Joker of Black">
+        </div>
+        <code><p id="ex3-2">Please select a card.</p></code>
+        <script>
+            $(function(){
+                $("#carding img").click(function(){
+                    $("#ex3-2").html(
+                        $(this).attr("alt")
+                    );
+                });
+            });
+        </script>
+    </div>
+
+    <div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
+    
+</body>
+</html>

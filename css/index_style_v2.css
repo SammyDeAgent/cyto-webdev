@@ -1,0 +1,213 @@
+/*General Style*/
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    outline: 0;
+}
+#navbar{
+    position: fixed;
+    overflow: visible;
+    transition: top 0.3s;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    background: rgba(0,0,0,0.7);
+}
+#navbar > a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 5px 0px 0px;
+    margin: 8px;
+    text-decoration: none;
+    font-size: 13px;
+}
+#navbar .leftflex{
+    margin-left: auto;
+}
+a:hover i{
+    color: grey;
+}
+#navbar a:hover{
+    color: grey;
+}
+#navbar a.active{
+    color: yellow;
+}
+#navbar a.active:hover{
+    color: rgb(122, 122, 27);
+}
+
+/*General Cards Layout*/
+.header {
+    background-color: #404040;
+    color: white;
+    text-align: left justify;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-left:0px;
+}
+.imgcard {
+    background: linear-gradient(rgba(215, 236, 22, 0.7),rgba(54, 75, 13, 0.5));
+    padding: 5px;
+    display: inline-block;
+  }
+.card {
+    background: grey;
+    color: white;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: 20px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 30px;
+    display: block;
+    z-index:10;
+    box-shadow: 
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+.footer {
+    padding: 20px;
+    text-align: center;
+    /*background: #ddd;*/
+    background: #6e6e6e;
+    /*color: white;*/
+    margin-top: 20px;
+}
+
+/*Image Grid*/
+.row{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+.column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+.column img{
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+}
+
+/*drop down menu - hover*/
+.dropdown  {
+    background-color: rgba(0,0,0,0);
+    transition: background-color 1s step-start;
+    overflow: hidden;
+    float: left;
+}
+.dropbtn{
+    font-size: 13px;
+    border: none;
+    outline: none;
+    color: #f2f2f2;
+    font-family: inherit;
+    padding: 8px 5px 0px 0px;
+    margin: 8px;
+}
+.dropdown:hover{
+    background-color: rgb(58, 58, 58, 1);
+}
+.dropbtn:hover{
+    color: grey;
+}
+.dropdown-content {
+    display:flex;
+    flex-direction: column;
+    top: -250px;
+    transition: background-color 1s;
+    transition: top 0.3s;
+    position: absolute;
+    background-color: rgba(58, 58, 58, 0.1);
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    z-index: -1;
+    min-width: 67px;
+}
+.dropdown-content > a {
+    float: none;
+    color: rgba(255,255,255,0);
+    transition: color 65ms ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 8px 5px 0px 0px;
+    margin: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+.dropdown-content a:hover {
+  color: grey;
+}
+.dropdown:hover .dropdown-content {
+    top: 45px;
+    background-color: rgba(58, 58, 58, 0.8);
+    /*display: block;*/
+}
+.dropdown:hover .dropdown-content a{
+   color: white;
+}
+
+/*Button Interactions*/
+.button{
+    transition: color 0.5s;
+    transition: background 0.5s;
+    background:rgb(26, 26, 26);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration:  none;
+    display:  inline-block;
+    cursor:    pointer;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.button:hover{
+    background-color: gray;
+    color: black;
+}
+
+/*blinking text effect*/
+@keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+}
+@-webkit-keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+}
+.blink {
+    animation: blink 1s step-start 0s infinite;
+    -webkit-animation: blink 1s step-start 0s infinite;
+}
+

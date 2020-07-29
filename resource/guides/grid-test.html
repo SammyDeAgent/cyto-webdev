@@ -1,0 +1,307 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+	    <title>Grid Box Test</title>
+        <link rel="shortcut icon"  href="../img/cyto.ico" />
+        <link rel="stylesheet"     href="../css/index_style.css"/>
+        <link rel="stylesheet"     href="../css/bg.css"/>
+        <link rel="stylesheet"     href="../css/meetstaff.css"/>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            #item1{
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 4;
+            }
+            body{
+                padding: 10px;
+            }
+            h3{
+                padding-top: 10px;
+            }
+            div div{
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Grid Display Testing HTML</h1>
+        <p>Notes can be found in the documentation of this HTML<br>
+        Resize the browser to see the effect take shape</p><br>
+
+        <h3>General Grid</h3>
+        <div style="display: grid;">
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+        </div>
+        <div style="display: grid; grid-auto-flow: column; padding-top:10px;">
+            <div style="background-color: gray;">a</div>
+            <div style="background-color: cyan;">b</div>
+            <div style="background-color: red;">c</div>
+            <div style="background-color: teal;">d</div>
+        </div>
+
+        <!--    Auto flow determines it's flow direction, either horizontal or vertical -->
+        <!--    display: grid, grid-template-columns, grid-template-rows                -->
+        <h3>Flow Direction and Grid Template</h3>
+        <div style="display: grid; 
+        grid-template-columns: 25px 25px 25px 25px; 
+        grid-template-rows: 25px 25px;">
+            <div style="background-color: gray;">a</div>
+            <div style="background-color: cyan;">b</div>
+            <div style="background-color: red;">c</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+        </div>
+        <div style="display: grid;
+         padding-top:10px; grid-template-rows: 25px;
+          grid-template-columns: 100px 160px;">
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+        </div>
+
+        <!--    column and row span can be simplified using such f(x)   -->
+        <!--    grid-auto-row or grid-auto-column determines the next element dimension after declared dimension-->
+        <h3>Grid Autos</h3>
+        <div style="display: grid;
+        grid-template-columns: 25px 25px 25px 25px;
+         grid-template-rows: 25px 25px 25px 25px;">
+            <div id="item1" style="background-color: gray;">a</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: blue;">3</div>
+        </div>
+
+        <!--    Gaps act like margin between elements   -->
+        <!--    grid-column-gap grid-row-gap to adjust the gap size -->
+        <!--    grid gap that is not the same size cannot be achieve    -->
+        <h3>Grid Gaps</h3>
+        <div style="display: grid; gap: 10px;
+        grid-template-columns: 100px auto 100px;
+        grid-template-rows: 50px">
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: orange;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: blue;">3</div>
+        </div>
+       
+        <!--    Fractional units for efficiently sizing space-->
+        <h3>Grid Fractional Units</h3>
+        <div style="display: grid; grid-template-columns: 50% 5fr 1fr 1fr;
+        gap: 10px">
+            <div style="background-color: orange;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: blue;">3</div>
+        </div>
+        <div style="display: grid; gap: 10px; padding-top: 20px;
+        grid-template-columns:  1fr 1.5fr 2fr 2.5fr 2fr 1.5fr 1fr;
+        grid-template-rows: 1fr 1.5fr 2fr 2.5fr 2fr 1.5fr 1fr;       
+        ">
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: red;">b</div>
+            <div style="background-color: teal;">d</div>
+            <div style="background-color: yellow;">1</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: green;">4</div>
+            <div style="background-color: teal;">d</div>
+        </div>
+
+        <!--    u can also repeat template pattern using repeat(n times, pattern)    -->
+        <!--    it can also be sandviched between other value   -->
+        <h3>Grid Pattern Repeatitions</h3>
+        <div style="display: grid; gap: 10px;
+        grid-template-columns: repeat(3, 60px 20px);" >
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+        </div>
+
+        <!--    can refer back to grid autos section but this is much simpler  -->
+        <!--    grid-column: span N, grid-row: span N  -->
+        <!--    u can move a bloc in a grid by using grid-DIMENSION-START/END: Location -->
+        <!--    both bloc move and span can be used together-->
+        <h3>Grid Span and Start-End Moves</h3>
+        <div style="display: grid; gap: 10px;
+        grid-template-columns: repeat(5, 60px );" >
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;
+            grid-column: span 3">3</div>
+            <div style="background-color: yellow;
+            grid-row: span 4;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: red;
+            grid-column: span 3;
+            grid-row: span 2">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <!--    Moving this bloc to the front   -->
+            <div style="background-color: yellow;
+            grid-column-start: 1;
+            grid-row-start: 1">4</div>
+            <!--    Using span and also starting point  -->
+            <div style="background-color: gray;
+            grid-column: 2 / -1;
+            grid-row: 1 / span 1">7</div>
+        </div>
+
+        <!-- Vertical: align-self, start at top border, end at bottom border    -->
+        <!-- Horizon.: justify-self, start at left border, end at right border  -->
+        <h3>Content Alignments</h3>
+        <div style="display: grid; gap: 5px; 
+        grid-template-columns: repeat(6, 40px);
+        grid-template-rows: repeat(4, 40px)
+        ">
+            <div style="background-color: gray;
+            grid-row: 2/ span 2; grid-column: 2/ span 4;
+            align-self: center">7</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: green;">5</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: blue;">3</div>
+            <div style="background-color: yellow;">4</div>
+            <div style="background-color: red;">2</div>
+            <div style="background-color: green;">5</div>
+            <div style="background-color: blue;">3</div>
+        </div>
+
+        <!-- provides a way to refer to an isolated part of grid by a name  -->
+        <!-- Remember: Space are not allowed, use hypen (-) instead -->
+        <h3>Template Areas and Grid Names </h3>
+        <div style="display: grid; 
+        grid-template-areas:    'TopLeft Top TopRight' 
+                                'Left Middle Right' 
+                                'BottomLeft Bottom BottomRight';">
+                                <div class="TopLeft" style="background-color: red;">2</div>
+                                <div class="Top" style="background-color: green;">5</div>
+                                <div class="TopRight" style="background-color: blue;">3</div>
+                                <div class="Left" style="background-color: purple;">9</div>
+                                <div class="Middle" style="background-color: blue;">3</div>
+                                <div class="Right" style="background-color: yellow;">4</div>
+                                <div class="BottomLeft" style="background-color: red;">2</div>
+                                <div class="Bottom" style="background-color: rgb(235, 65, 65);">69</div>
+                                <div class="BottomRight" style="background-color: blue;">3</div>
+
+        </div>
+        <div style="display:grid; padding-top: 10px;
+        grid-template-columns: [left] 100px 100px 100px [center] 100px 100px 100px [right];
+        grid-template-rows: [top] 100px 100px 100px [center] 100px 100px 100px [bottom]">
+            <div style="background-color: purple;
+            grid-column: left/center; grid-row: top/center">9</div>
+            <div style="background-color: blue;
+            grid-column: center/right; grid-row: top/center">3</div>
+            <div style="background-color: yellow;
+            grid-column: left/center; grid-row: center/bottom">4</div>
+            <div style="background-color: red;
+            grid-column: center/right; grid-row: center/bottom">2</div>
+        </div>
+
+        <br><br>
+        <!--    Making Russia Federation Flag here cause why not   -->
+        <div style="display:grid; 
+        grid-template-columns: 200px; 
+        grid-template-rows: 50px 50px 50px 50px ">
+            <div style="
+            grid-column-start:1;
+            grid-column-end:2">Russian Federation Flag</div>
+            <div style="
+            border-top:black solid 1px;
+            border-left:black solid 1px;
+            border-right:black solid 1px;
+            background-color: white;"></div>
+            <div style="background-color: blue;"></div>
+             <div style="background-color: red;"></div>
+            </div>
+            <br>
+        </div>
+
+    </body>
+</html>

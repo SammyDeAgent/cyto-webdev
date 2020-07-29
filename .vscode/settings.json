@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/759e130e-ebf7-427f-9cbc-00ac50c60686/resourceGroups/uccd222310june2020/providers/Microsoft.Web/sites/uccd2223-cytokine",
+    "appService.deploySubpath": "."
+}

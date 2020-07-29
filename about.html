@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang ="en-US ">
+<head>
+    <title>About Me</title>
+    <link rel="shortcut icon"  href="img/cyto.ico" />
+    <link rel="stylesheet"     href="css/index_style_v2.css"/>
+    <link rel="stylesheet"     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"     href="css/social_media_icon.css"/>
+
+    <!--    Custom Font Here    -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <meta name="description"    content="Informations about the WebDev and me, contact me for partnering and more details.">
+    <meta name="keywords"       content="HTML, CSS, JavaScript">
+    <meta name="revised"        content="Test1, 27/6/2020">
+    <meta name="author"         content="Sammy">
+    <meta name="viewport"       content="width=device-width, initial-scale=1.0">
+    <meta name="image"          content="https://uccd2223-cytokine.azurewebsites.net/img/cytov2.png">
+
+    <meta property="og:type"        content="article">
+    <meta property="og:site_name"   content="UCCD2223 Cytokine WebDev">
+    <meta property="og:title"       content="About Me">
+    <meta property="og:description" content="Informations about the WebDev and me, contact me for partnering and more details.">
+    <meta property="og:url"         content="https://uccd2223-cytokine.azurewebsites.net/about.html">
+    <meta property="og:locale"      content="en_US">
+    <meta property="og:image"       content="https://uccd2223-cytokine.azurewebsites.net/img/cytov2.png">
+
+    <style>
+        body, html{
+            background-color: rgb(44, 44, 44);
+            height: 100%;
+        }
+        .hero-img{
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),
+                url("img/laurine-greenshill.jpg");
+            height: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+        .hero-txt > div {
+            font-family: 'Alfa Slab One', cursive;
+            text-align: center;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255,255,255,0.5);
+            font-size: 100px;
+        }
+        #selfimg{
+            max-width: 270px;
+        }
+        #textheader{
+            margin-left: 30px;
+        }
+        #textheader > p{
+            max-width: 270px;
+        }
+        #bannerimg{
+            margin: 80px 100px 30px 100px;
+        }
+        #imageheader{
+            margin: 80px 10px 30px 10px;
+        }
+        #contactbar{
+            margin: 0px 30px 0px 30px;
+        }
+        #contactbar > a{
+            font-size:25px;
+            padding: 20px;
+            margin: 5px 2px;
+            width: 63px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 50%;
+        }#contactbar > a:hover{
+            opacity: 0.5;
+        }
+        #quotebanner{
+            text-align: justify;
+            margin: 30px 330px 60px 330px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-left: yellow 3px solid;
+        }
+        @media only screen and (max-width: 1500px){
+            #imageheader{
+                margin: 50px 10px 30px 10px;
+                font-size: 14px;
+            }
+            #quotebanner{
+                margin: 30px 120px 50px 120px;
+            }
+        }
+        @media only screen and (max-width: 950px){
+            .card{
+                margin-left: 30px;
+                margin-right: 30px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #selfimg{
+                max-width: 190px;
+            }
+            #imageheader{
+                margin: 50px 0px 30px 0px;
+                font-size: 10px;
+            }
+            #textheader > p{
+                max-width: 240px;
+            }
+            #contactbar{
+            margin: 0px 80px 0px 80px;
+            }
+            #quotebanner{
+                margin: 30px 100px 40px 100px;
+            }
+        }
+        @media only screen and (max-width: 775px) {
+            .card{
+                margin-left: 0px;
+                margin-right: 0px;
+                padding-left: 30px;
+                padding-right: 30px;
+                width:100%;
+            }
+            #imageheader{
+                margin: 30px 50px 30px 50px;
+                flex-direction: column;
+            }
+            #selfimg{
+            max-width: 200px;
+            margin-bottom: 30px;
+            }
+            .hero-txt > div{
+                font-size: 60px;
+            }
+            #textheader{
+                margin-left: 0px;
+            }
+            #textheader > p{
+                font-size: 13px;
+                max-width: 380px;
+            }
+            #bannerimg{
+            margin: 40px 30px 30px 30px;
+            }
+            #contactbar{
+            margin: 0px 30px 0px 30px;
+            }
+            #quotebanner{
+                margin: 20px 30px 30px 30px;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="hero-img">
+        <div id="navbar">
+            <a style="padding-left:10px"><img src ="img/Cytokine_Logo_White.png" style="max-width: 25px;"></a>
+            <a href="https://uccd2223-cytokine.azurewebsites.net/">Main</a>
+            <div class="dropdown">
+                <div onclick="location.href='https://uccd2223-cytokine.azurewebsites.net/labportal.html'" 
+                class="dropbtn" style="cursor: pointer;">Labs 
+                    <i style="font-size: 14px; margin:0px; padding:0px; padding-bottom: 10px;"
+                    class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/myfirstpage.html">Lab 1</a>
+                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab2.html">Lab 2</a>
+                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab3.html">Lab 3</a>
+                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab4.html">Lab 4</a>
+                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab5.html">Lab 5</a>
+                </div>
+            </div> 
+            <a href="https://uccd2223-cytokine.azurewebsites.net/7355608.html">Music</a>
+            <a class="active" href="https://uccd2223-cytokine.azurewebsites.net/about.html">About</a>
+            <a class="leftflex" href="https://cytokine.pepperkick.com/" 
+            style="float:right; padding-right: 0px;">Cytokine Corporations
+                <i style="font-size: 14px; margin:0px; padding:0px; width: 35px;" 
+                class="fa fa-external-link"></i>
+            </a>
+        </div>
+        <div class="hero-txt">
+            <div>
+                About Me
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:-50px; z-index: 10;
+    background:rgb(68, 67, 67);">
+        <div id="imageheader" style="display:flex; justify-content: center; align-items: center;">
+            <div>
+                <img id="selfimg" src="img/self_v2.jpg" style="
+                box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.5);">
+            </div>
+            <div id="textheader">
+                <h1 style="max-width: 160px;">Hello there, I'm Sammy</h1>
+                <p style="text-align: justify;">
+                    To me, computer is a fascinating invention that is ever happen to humanity.
+                    The innovation that sparks the life of programming has taught me to write 
+                    efficiently and in an orderly manner that make use of the negative space to
+                    provide a comfortable reading experience.<br><br>
+                    Other than focusing on the matter of studying, I also participate in the gaming
+                    environment to relax and provide myself some motivations to continue forward.
+                </p>
+            </div>
+        </div>
+
+        <p id="quotebanner">
+            Science is the embodiment of the universe itself, with chemistry
+            being the building block of science, physics being the fundamental
+            rule of science, and biology being the product of science and emergence,
+            Life itself.
+        </p>
+
+        <div id="contactbar" style="text-align: center;">
+            <a href="https://web.facebook.com/SammyDeAgent" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/SammyLePlatypus" class="fa fa-twitter"></a>
+            <a href="https://www.youtube.com/channel/UCHTh5sQHAWF3Wr950u11kdA?view_as=subscriber" class="fa fa-youtube-play"></a>
+            <a href="https://www.instagram.com/sammydeagent/" class="fa fa-instagram"></a>
+            <a href="https://www.reddit.com/user/SammyDeAgent" class="fa fa-reddit"></a>
+            <a href="https://www.twitch.tv/sammydeagent" class="fa fa-twitch"></a>
+            <a href="http://steamcommunity.com/profiles/76561198109358641" class="fa fa-steam"></a>
+            <a href="https://github.com/SammyDeAgent" class="fa fa-github"></a> 
+            <a class="fa fa-wechat" onclick="alert('My Wechat ID: SammyLePlatypus')"></a>
+            <a class="fa fa-whatsapp" onclick="alert('My Whatsapp Phone Number: +60 18 472 1376 ')"></a>
+        </div>
+       
+        <div id="bannerimg" style="text-align: center;">
+            <div>
+                <img src="img/cyto_banner.png" style="max-width: 100%;">
+            </div>
+            <div>
+                <div id="cytotext">
+                    <h1 style="text-align: center;">Development of Cytokine</h1>
+                    <p style="text-align: justify; max-width: 100%;">
+                        The definition of Cytokine derives from the biological cell signaling molecule in our body,
+                        it represents the important connection between country, community and people.
+                        The shapes of the simple triangles represents the community or individual we're able to
+                        connect with, without involving overcomplicated procedures and steps. Lastly, the general lambda
+                        symbol associated with Cytokine represents the half-life that is described as exponential decay of matter,
+                        but in this case it's the decay of relationship and partnership due to time, while sounds negative, it taught
+                        an important widsom that the decay of communication can be halted by constant interaction, hence reminding us
+                        that while disconnection from the node is inevitable, it can be prevented.<br><br>
+                        Cytokine is first founded around the year 2015 with the name of "Cytokine Innovations" along the tagline 
+                        "Innovations, Designs, Gaming", but the project is scraped afterwards and was replaced with the current "Cytokine"
+                        providing service and entertainment to the gaming community starting from SEA region, aiming to expanding to the entire Asia
+                        and even Europe region. Australia region was made possible with the help of ChillyPunch Founder: PepperKick, by partnering
+                        with the gaming community in Australia with over top-notch server providing and booking service.<br><br>
+                        Right now, the available branch of Cytokine were Securities which is a relax gaming community and the hub for entertainment;
+                        Syndicate, where competitive gaming enviroment can be experienced in the form of organized PUGS, Scrims or major events; and Lastly
+                        the development branch called Framework were new ideas are proposed and tested from the feedbacks of the community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
+
+    <!--    Hide Navbar on Scroll Script    -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } 
+        else {
+            document.getElementById("navbar").style.top = "-50px";
+        }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+</html>

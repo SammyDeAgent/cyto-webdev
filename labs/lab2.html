@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang ="en-US ">
+<head>
+  <title>UCCD2223 Lab 2</title>
+  <link rel="shortcut icon"  href="../img/cyto.ico" />
+  <link rel="stylesheet"     href="../css/index_style.css"/>
+    
+  <meta charset="UTF-8">
+  <meta name="description"    content="Alpha Build Version var 1.0">
+  <meta name="keywords"       content="HTML, CSS, JavaScript">
+  <meta name="revised"        content="Test1, 27/6/2020">
+  <meta name="author"         content="Sammy">
+  <meta name="viewport"       content="width=device-width, initial-scale=1.0">
+  <meta name="image"          content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="UCCD2223 Cytokine Test Site">
+  <meta property="og:title"       content="Lab Practical 2">
+  <meta property="og:description" content="Alpha Build Version var 1.0">
+  <meta property="og:url"         content="https://uccd2223-cytokine.azurewebsites.net/uccd2223labportal/labs/lab2.html">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:image"       content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+</head>
+<body>
+<a name="top"></a>
+<div class="header">
+    <div id = "fonttab">
+        <div class = "">
+            <h1>  
+               Lab Practical 2 
+            </h1>
+            <p>Alpha Build Version var 1.0</p>
+        </div>
+    </div>
+    <div class ="topnav">
+        <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Back</a>
+    </div>
+</div>
+
+<div class = "card">
+    <h1>Form Example</h1>
+    <form action="https://uccd2223-cytokine.azurewebsites.net/7355608.html">
+        <label>Write your adventurer's name: </label>
+        <input type="text" autofocus placeholder="Rick Astley">
+        <p>Press <b>enter</b> when you completed your words.</p>
+    </form>
+</div>
+
+<div class = "card">
+    <h1>Tables</h1>
+    <table border="1">
+        <caption>Timetable</caption>
+        <tr>
+            <th></th>
+            <th>9am</th>
+            <th>10am</th>
+            <th>11am</th>
+            <th>12pm</th>
+        </tr>
+        <tr>
+            <th>Monday</th>
+            <td>Geography</td>
+            <td>English</td>
+            <td>Math</td>
+            <td rowspan="2">Art</td>
+        </tr>
+        <tr>
+            <th>Tuesday</th>
+            <td colspan="3">Gym</td>
+
+        </tr>
+    </table>
+</div>
+
+<div class = "card">
+    <h1>Multimedia</h1>
+    <p>Warning! May contain some minor profanity!</p>
+    <video controls poster="../img/cs_poster.jpeg" width="600" height="400">
+        <source src="../videos/s1mple-moment.mp4" type="video/mp4">
+        <source src="../videos/s1mple-moment.webm" type="video/webm">
+        <!--<source src="sparky.ogv" type="video/ogg">
+        <source src="sparky.webm" type="video/webm"> -->
+        <p>Your browser cannot play the video.</p>
+    </video>
+    <br>
+    <p style = "padding-top: 20px;">Audio Controls
+    <br>Playing: Jojo's Bizarre Adventure: Battle Tendency - Propaganda (Stroheim's theme)
+    </p>
+    <audio controls>
+        <source src="../audio/jjba-bt-propaganda.mp3" type="audio/mpeg">
+        <!--<source src="primepodcast.ogg" type="audio/ogg">-->
+    </audio>
+    <br>
+    <p style = "padding-top: 20px;">Flash File - Right Click to Play
+    <br> Playing: Madness Combat - Dissenter by Krinkles
+    <br>Warning! Contains cartoon violence and high volume ( I can't adjust flash volume )
+    </p>
+     <p style = "padding-top: 20px;">
+
+        <embed src="../resource/DISSENTER.swf"
+        loop = "true"
+        menu = "true"
+        play = "false"
+        width="640" height="420">
+</div>
+
+<div class = "card">
+    <h1>Forms 1</h1>
+    <h2>Feedback Form</h2>
+    <p>Please fill out this form to help 
+     us improve our site.</p>
+
+    <form method = "GET" action="https://uccd2223-cytokine.azurewebsites.net/thanks.html">
+        <p>
+            <input type = "hidden" name = "recipient"
+               value = "deitel@deitel.com" />         
+        </p>
+
+        <p><label>Name: 
+               <input name = "name" type = "text" size = "25" required/>
+            </label></p>
+ 
+         <!-- <textarea> creates a multiline textbox -->
+         <p><label>Comments:<br />
+            <textarea name = "comments"
+               rows = "4" cols = "36" placeholder="Enter comments here."></textarea>
+         </label></p>
+
+         <!-- <input type = "email"> inserts a -->
+         <!-- textbox whose display is masked with -->
+         <!-- asterisk characters -->
+         <p><label>E-mail Address: 
+            <input name = "email" type = "email"  size = "25" required/>
+         </label></p>
+         <p>      <strong>Things you liked:</strong><br />
+            <label>Site design
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Design" /></label>
+            <label>Links
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Links" /></label>
+            <label>Ease of use
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Ease" /></label> 
+            <label>Images 
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Images" /></label>
+            <label>Source code
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Code" /></label>
+         </p>
+         <!-- <input type = "radio" /> creates a radio -->
+         <!-- button. The difference between radio buttons -->
+         <!-- and checkboxes is that only one radio button -->
+         <!-- in a group can be selected. -->
+         <p><strong>How did you get to our site?:</strong><br />
+            <label>Search engine
+               <input name = "howtosite" type = "radio"
+                  value = "search engine" checked /></label>
+            <label>Links from another site
+               <input name = "howtosite" type = "radio" 
+                  value = "link" /></label> 
+            <label>Deitel.com Web site
+               <input name = "howtosite" type = "radio" 
+                  value = "deitel.com" /></label>
+            <label>Reference in a book
+               <input name = "howtosite" type = "radio" 
+                  value = "book" /></label>
+            <label>Other
+               <input name = "howtosite" type = "radio" 
+                  value = "other" /></label>
+         </p>
+         <p>
+            <label>Rate our site: 
+                <!-- the <select> tag presents a drop-down -->
+                <!-- list with choices indicated by the -->
+                <!-- <option> tags -->
+               <select name = "rating">
+                  <option selected>Amazing</option>
+                  <option>10</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option>Awful</option>
+               </select>
+            </label>
+         </p>
+         <p>
+            <input type = "submit" value = "Submit" />
+            <input type = "reset" value = "Clear" />
+         </p>   
+    </form>
+</div>
+
+<div class = "card">
+    <h1>Forms 2</h1>
+    <p>This form demonstrates the new HTML5 input types
+        and the placeholder, required and autofocus attributes.
+     </p>
+
+     <form method="GET" action="https://uccd2223-cytokine.azurewebsites.net/thanks.html">
+         <p>
+             <label>
+                 Date:
+                 <input name="myDate" type="date" autofocus />
+                 (yyyy-mm-dd)
+             </label>
+         </p>
+         <p>
+             <label>
+                 Time:
+                 <input type="time" name="myTime" /> (hh:mm)
+             </label>
+         </p>
+         <p>
+             <label>
+                 Range:
+                 0 <input name="myRange" type="range"
+                          min="0"
+                          max="20"
+                          value="10" /> 20
+             </label>
+         </p>
+
+         <p>
+             <label>
+                 Tel:
+                 <input name="myTel" type="tel" placeholder="(###) ###-####"
+                        pattern="\(\d{3}\) +\d{3}-\d{4}" required />
+                 (###) ###-####
+             </label>
+         </p>
+         <details>
+            <summary>Intake:</summary>
+            <p>
+                <label for="intake">Intake: </label>
+                <input name="myText" type="text" list="months" id="intake" placeholder="Select an intake" />
+                <datalist id="months">
+                    <option value="January">
+                    <option value="May">
+                    <option value="October">
+                </datalist>
+            </p>
+        </details>
+       
+        <p>
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Clear" />
+        </p>
+    </form>
+</div>
+
+<div class = "card">
+    <h1>HTML Excersice - Form</h1>
+    <h2>Welcome to Millenium Gymnastic Booster Club Popcorn Sales</h2>
+    <form method="GET" action="https://uccd2223-cytokine.azurewebsites.net/thanks.html">
+    <table>
+        <tr>
+            <td>
+                <label for = "name">
+                Buyer's Name: 
+            
+            <td>
+                    <input id = "name" name = "name" type = "text" size = "25" required/>
+                    <input type="hidden" id="custNa" name="custNa" value="tesco">
+            </td>
+        </td>
+        </label>
+        </tr>
+        <tr>
+            <td>
+                <label for = "seckey">
+                Security Key:
+                <td>
+                    <input id = "seckey" name = "seckey" type = "text" size = "25" required/>
+                    <input type="hidden" id="custSec" name="custSec" value="5599">
+                </td>
+                <td>
+                    ( Example: 4581)
+                </td>
+            </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for = "addr">
+                Street Address:
+                <td>
+                    <input id = "addr" name = "addr" type = "text" size = "25" required/>
+                </td>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for = "csz">
+                City, State, Zip:
+                <td>
+                    <input id = "csz" name = "csz" type = "text" size = "25" required/>
+                </td>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for = "country">Country:</label>
+                <td>
+                    <select name = "country" id = "country">
+                        <option selected = "selected">Select Country</option>
+                        <option value = "MY">Malaysia</option>
+                        <option value = "US">United States of America</option>
+                        <option value = "UK">United Kingdom</option>
+                        <option value = "RU">Russia Federation</option>
+                        <option value = "UG">Uganda</option>
+                    </select>
+                </td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email:</label>
+                <td>
+                    <input type= "email" id="email" name="email" size = "25">
+                </td>
+                <td>
+                    ( emailid@domain.com )
+                </td>
+            <td>
+        </tr>
+    </table>
+    <table border = "1" style="margin-top:20px">
+        <th>
+            Product name
+            <th>
+                Price
+            </th>
+            <th>
+                Quantity
+            </th>
+        </th>
+        <tr>
+            <td>
+                Unpopped Popcorn (1lb)
+                <td>
+                    $3.00
+                </td>
+                <td>
+                    <input name="unpopped" type=number>
+                </td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Caramel Popcorn (2lb Canister)
+                <td>
+                    $3.50
+                </td>
+                <td>
+                    <input name="caramel" type=number>
+                </td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Caramel Nut Popcorn (2lb Canister)
+                <td>
+                    $4.50
+                </td>
+                <td>
+                    <input name="caramelnut" type=number>
+                </td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Toffey Nut Popcorn (2lb Canister)
+                <td>
+                    $5.00
+                </td>
+                <td>
+                    <input name="toffeynut" type=number>
+                </td>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Payment Method:</h3>
+    <table>
+        <tr>
+            <td>
+            <label>
+                Visa
+                <td>
+                    <input name = "pm" type = "radio" value = "visa" checked />
+                </td>  
+            </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <label>
+                Master Card
+                <td>
+                    <input name = "pm" type = "radio" value = "mscard" />
+                </td>
+            </label>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <label>
+                Discover
+                <td>
+                    <input name = "pm" type = "radio" value = "ds" />
+                </td> 
+            </label>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <label>
+                Cheque
+                <td>
+                    <input name = "pm" type = "radio" value = "chq" />
+                </td>
+            </label>
+        </td>
+        </tr>
+    </table>
+    
+    <h3>Quality Feedback:</h3>
+    <table>
+        <tr>
+        <td>
+            Very Good
+            <td>
+                <input name="VG" type="checkbox"/>
+            </td>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            Good
+            <td>
+                <input name="G" type="checkbox" checked/>
+            </td>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            Don't Like
+            <td>
+                <input name="DL" type="checkbox"/>
+            </td>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            Bad
+            <td>
+                <input name="B" type="checkbox"/>
+            </td>
+        </td>
+        </tr>
+    </table>
+
+    <p>
+        <input type = "submit" value = "Submit" />
+        <input type = "reset" value = "Clear" />
+     </p>   
+    </form>
+    <a style="margin-left:0px" class = "button" href="#top">Back To Top</a>
+</div>
+
+<div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
+</body>
+</html>
