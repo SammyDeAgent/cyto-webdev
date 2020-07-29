@@ -1,6 +1,5 @@
 # cyto-webdev
-UCCD2223 Web Dev Repos 
-This is the allocated source code created throughout the subject UCCD2223 - FICT CS course.
+UCCD2223 Web Dev Repos, this is the allocated source code created throughout the subject UCCD2223 - FICT CS course.
 
 Contributors: 
 - Sammy   
