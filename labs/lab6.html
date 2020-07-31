@@ -22,6 +22,19 @@
     <meta property="og:url"         content="https://uccd2223-cytokine.azurewebsites.net/labs/lab6.html">
     <meta property="og:locale"      content="en_US">
     <meta property="og:image"       content="https://uccd2223-cytokine.azurewebsites.net/img/cyto.png">
+
+    <style>
+        code{
+          display:block;
+          box-sizing: border-box;
+          border: 3px outset silver;
+          padding: 10px;
+          margin-top: 5px;
+          color: chartreuse;
+          background-color: black;
+        }
+    </style>
+
 </head>
 <body>
     <a name="top"></a>
@@ -34,5 +47,189 @@
             <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Back</a>
         </div>
     </div>
+
+    <style>
+        input[type=text] {
+            width: 300px;
+        }
+    </style>
+
+    <div class="card">
+        <h1>Excerise 1</h1>
+        <h3>String Comprehension - Array</h3>
+        <form id="form1">
+            <label>Enter String: </label>
+            <input type="text" id="str" name="str" required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex1">Awaiting string input...</p></code>
+        <script>
+            var arr = [];
+            var total = 0;
+            $(function(){
+                $("#form1").submit(function(event){
+                    event.preventDefault();
+
+                    var str = $("#str").val();
+                    total += str.length;
+                    arr.push(str);
+                    $("#str").val("");
+                    arr.sort();
+
+                    $("#ex1").html(
+                        "<pre>" +
+                        "Entered string:    " + str + "<br><br>" +
+                        "Array joined cache:<br>>> " + arr.join("<br>>> ") + "<br><br>" +
+                        "AVG No. of Chars:  " + (total/arr.length).toFixed(2) +
+                        "</pre>"
+                    );
+                });
+            });
+        </script><br>
+
+        <h3>String Comprehension - Sorting</h3>
+        <form id="form1-2">
+            <label>Enter String: </label>
+            <input type="text" id="str2" name="str2" required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex1-2">Awaiting string input...</p></code>
+        <script>
+            $(function(){
+                $("#form1-2").submit(function(event){
+                    event.preventDefault();
+
+                    var temp = $("#str2").val();
+                    var words = temp.split(" ");
+
+                    words.sort(function(a,b){
+                        if(a.toLowerCase() < b.toLowerCase())
+                            return -1;
+                        else if(a.toLowerCase() > b.toLowerCase())
+                            return 1;
+                        else return 0;
+                    });
+
+                    words.reverse();
+                    $("#ex1-2").html(
+                        "<pre>" + 
+                        "Entered string:    " + temp + "<br><br>" +
+                        "Descend sorted words cache:<br>>> " + words.join("<br>>> ") +
+                        "<pre>"
+                    );
+
+                    $("#str2").val("");
+                });
+            });
+        </script><br>
+
+        <h3>Date Comparison</h3>
+        <form id="date1">
+            <table>
+                <tr>
+                    <td><label>Enter Start Date:</label></td>
+                    <td><input type="date" id="startD" required></td>
+                </tr>
+                <tr>
+                    <td><label>Enter End Date:</label></td>
+                    <td><input type="date" id="endD" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+        <code><p id="dateP">Awaiting date inputs...</p></code>
+        <script>
+            $(function(){
+                $("#date1").submit(function(event){
+                    event.preventDefault();
+
+                    var start   = new Date($("#startD").val());
+                    var end     = new Date($("#endD").val());
+
+                    if(start > end)
+                        $("#dateP").html("Start Date (" + start + ") is greater than end date (" + end + ")");
+                    else if(start < end)
+                        $("#dateP").html("Start Date (" + start + ") is less than end date (" + end + ")");
+                    else
+                        $("#dateP").html("Start Date (" + start + ") is equal to end date (" + end + ")");
+
+                    $("#startD").val("");
+                    $("#endD").val("");
+                })
+            })
+        </script>
+    </div>
+
+    <div class="card">
+        <h1>Excerise 2</h1>
+        <h3>Replace of Even Numbers</h3>
+        <form id="f2-1">
+            <label>Enter integer values: </label>
+            <input type="text" id="numstr" placeholder="Space between integers" required>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <button id="btnR">Replace Even Number Values</button>
+        <code><p id="ex2-1">Awaiting integer inputs...</p></code>
+        <script>
+            var intS = [];
+            $(function(){
+                $("#f2-1").submit(function(event){
+                    event.preventDefault();
+                    var temp2 = $('#numstr').val();
+                    intS = temp2.split(" ")
+
+                    $("#ex2-1").html(
+                        "Integers Entered:<br>>> " + intS.join("<br>>> ")
+                    )
+                });
+                $("#btnR").click(function(){
+                    for(var i = 0; i < intS.length;i++){
+                        if(intS[i]%2==0)
+                            intS[i] = -111;
+                    }
+                    $("#ex2-1").append(
+                        '<br><br>' + "Replaced Integers:<br>>> " + intS.join("<br>>> ")
+                    )
+                })  
+            })
+        </script><br>
+
+        <h3>Interger Summation</h3>
+        <form id="f2-2">
+            <labe>Enter integer values:</labe>
+            <input id="str3" type="text" name="str3" placeholder="Comma between integers"required>
+            <input type="submit" value="Submit">
+        </form>
+        <code><p id="ex2-2">Awaiting interger inputs...</p></code>
+  
+        <script>
+                $(function(){
+                    $("#f2-2").submit(function(event){
+                    event.preventDefault();
+        
+                    var str = $("#str3").val();
+                    var tokens = str.split(',');
+                    var total = 0;
+        
+                    tokens.forEach(function(element){
+                        total += parseInt(element);
+                    });
+        
+                    $("#ex2-2").html(
+                        "Integers Entered:<br>>> " + tokens.join("<br>>> ") + "<br><br>" +
+                        "Sum is " + total
+                    );
+                    $("#str").val("");
+                });
+            });
+        
+        </script>
+    </div>
+
+    <div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
 </body>
 </html>
