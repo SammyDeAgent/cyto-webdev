@@ -60,6 +60,7 @@
             left: 79px;
             height: auto;max-width: 260px;
         }
+
         @media only screen and (max-width: 775px) {
             .card{
                 margin-left: 0px;
@@ -82,6 +83,15 @@
 </head>
 <body>
     <div class="hero-img">
+
+        <!-- This is the alternative navbar used in small screen -->
+        <div id = "dropbar">
+            <a href="https://uccd2223-cytokine.azurewebsites.net/" ><i class="fa fa-home active"></i></a>
+            <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html" ><i class="fa fa-folder-open "></i></a>
+            <a href="https://uccd2223-cytokine.azurewebsites.net/7355608.html" ><i class="fa fa-music"></i></a>
+            <a href="https://uccd2223-cytokine.azurewebsites.net/about.html" ><i class="fa fa-user-circle-o "></i></a>
+            <a href="https://cytokine.cc" ><i class="fa fa-external-link"></i></a>
+        </div>
 
         <div id="navbar">
             <a style="padding-left:10px"><img src ="img/Cytokine_Logo_White.png" style="max-width: 25px;"/></a>
@@ -224,9 +234,11 @@
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = "0";
+            document.getElementById("dropbar").style.top = "0";
         } 
         else {
             document.getElementById("navbar").style.top = "-50px";
+            document.getElementById("dropbar").style.top = "-50px";
         }
             prevScrollpos = currentScrollPos;
         }
