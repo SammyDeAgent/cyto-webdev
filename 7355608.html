@@ -83,7 +83,7 @@
             <a href="https://uccd2223-cytokine.azurewebsites.net/about.html" ><i class="fa fa-user-circle-o "></i></a>
             <a href="https://cytokine.cc" ><i class="fa fa-external-link"></i></a>
         </div>
-        
+
         <div id="navbar">
             <a style="padding-left:10px"><img src ="img/Cytokine_Logo_White.png" style="max-width: 25px;"></a>
             <a href="https://uccd2223-cytokine.azurewebsites.net/">Main</a>
@@ -209,17 +209,19 @@ background:rgb(68, 67, 67);">
 
 <!--    Hide Navbar on Scroll Script    -->
 <script>
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } 
-    else {
-        document.getElementById("navbar").style.top = "-50px";
-    }
-        prevScrollpos = currentScrollPos;
-    }
-</script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+            document.getElementById("dropbar").style.top = "0";
+        } 
+        else {
+            document.getElementById("navbar").style.top = "-50px";
+            document.getElementById("dropbar").style.top = "-50px";
+        }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
 </body>
 </html>
