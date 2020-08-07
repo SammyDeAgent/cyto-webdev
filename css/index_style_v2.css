@@ -45,41 +45,6 @@ a:hover i{
     color: rgb(122, 122, 27);
 }
 
-#dropbar{
-    display: none;
-}
-
-/*Alternative Navbar in small screen*/
-@media only screen and ( max-width: 775px){
-    #navbar{
-        display: none;
-    }
-    #dropbar{
-        display: flex;
-        width: 100%;
-        background: rgba(0,0,0,0.7);
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        overflow: visible;
-        transition: top 0.3s;
-        z-index: 10;
-    }
-    #dropbar > a i{
-        text-decoration: none;
-        float:none;
-        color: white;
-        font-size: 30px;
-        margin: 5px 20px;
-    }
-    #dropbar > a i:hover{
-        color: grey;
-    }
-    #dropbar > a i.active{
-        color: yellow;
-    }
-}
-
 /*General Cards Layout*/
 .header {
     background-color: #404040;
