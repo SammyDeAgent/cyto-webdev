@@ -32,10 +32,10 @@ a{
 #navbar .leftflex{
     margin-left: auto;
 }
-a:hover i{
+#navbar > a:hover i{
     color: grey;
 }
-#navbar a:hover{
+#navbar > a:hover{
     color: grey;
 }
 #navbar a.active{
@@ -114,7 +114,7 @@ a:hover i{
 }
 
 /*drop down menu - hover*/
-.dropdown  {
+/* .dropdown  {
     background-color: rgba(0,0,0,0);
     transition: background-color 1s step-start;
     overflow: hidden;
@@ -167,10 +167,103 @@ a:hover i{
 .dropdown:hover .dropdown-content {
     top: 45px;
     background-color: rgba(58, 58, 58, 0.8);
-    /*display: block;*/
+    display: block;
 }
 .dropdown:hover .dropdown-content a{
    color: white;
+} */
+
+/*Drop Down Menu - Advanced*/
+.dropdown  {
+    display: block;
+    overflow: hidden;
+}
+.dropbtn{
+    font-size: 13px;
+    border: none;
+    outline: none;
+    color: #f2f2f2;
+    font-family: inherit;
+    padding: 8px 5px 0px 0px;
+    margin: 8px;
+    cursor: pointer;
+}
+.dropbtn:hover{
+    color:grey;
+}
+.dropbtn i{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.dropdown .wrapper{
+    position: absolute;
+    top: 55px;
+    display: flex;
+    width: 205px;
+    overflow: hidden;
+    background: rgba(44, 44, 44, 0.8);
+    box-shadow: 
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3 ease;
+    display: none;
+}
+.dropdown .wrapper.show{
+    display: block;
+    display: flex;
+}
+.dropdown .wrapper .more-bar{
+    display: none;
+}
+.dropdown .wrapper ul li{
+    list-style: none;
+    
+}
+.dropdown .wrapper ul{
+    list-style: none;
+    width: 200px;
+    padding: 0px 0px 0px 5px;
+    transition: all 0.3s ease;
+}
+.dropdown .wrapper ul li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f2f2f2;
+    padding: 0px 0px 0px 0px;
+    border-radius: 3px;
+    padding: 5px 10px 5px 5px;
+}
+.dropdown .wrapper ul li:hover a{
+    background: rgba(255,255,255,0.3);
+}
+.dropdown .wrapper ul li a:hover{
+    color: white;
+}
+.dropdown .wrapper ul .more-items{
+    padding-left: 5px;
+    color: white;
+    cursor: pointer;
+}
+.dropdown .wrapper ul .more-items:hover{
+    color: grey;
+}
+.dropdown .wrapper ul .more-items i{
+    position: relative;
+    right: -135px;
+    font-size: 20px;
+    pointer-events: none;
+}
+.wrapper .more-bar .arrow {
+    font-size: 14px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+.wrapper .more-bar .arrow:hover {
+    color: grey;
+}
+.wrapper .more-bar .arrow span{
+    margin-right: 15px;
 }
 
 /*Button Interactions*/

@@ -114,6 +114,17 @@
                 color: rgb(122, 122, 27);
             }
         }    
+        @media only screen and (max-width: 375px) {
+            #header01{
+                padding-top: 10px;
+                font-size: 1.2rem;
+            }
+            .image1{
+                margin: 0px;
+                padding: 0px;
+                max-width: 135px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -131,7 +142,68 @@
         <div id="navbar">
             <a style="padding-left:10px"><img src ="img/Cytokine_Logo_White.png" style="max-width: 25px;"/></a>
             <a class="active" href="https://uccd2223-cytokine.azurewebsites.net/">Main</a>
+
+            <!-- Advanced Drop Menu -->
             <div class="dropdown">
+                <div class="dropbtn">Labs<i class="fa fa-caret-down"></i></div>
+                <div class="wrapper">
+                    <ul class="menu-bar">
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Lab Portal</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/myfirstpage.html">Lab 1</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab2.html">Lab 2</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab3.html">Lab 3</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab4.html">Lab 4</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab5.html">Lab 5</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab6.html">Lab 6</a></li>
+                        <li class="more-items">More<i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+
+                    <!-- More Menu -->
+                    <ul class="more-bar">
+                        <li class="arrow" style="padding-bottom: 10px;"><span class="fa fa-arrow-left"></span>Previous</li>
+                        <li><a href="">Lab 7</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                    </ul>
+
+                    <!-- Script for the dropdown -->
+                    <script>
+                        const dropbtn = document.querySelector(".dropbtn");
+                        const menuwrap = document.querySelector(".wrapper");
+                        const menubar = document.querySelector(".menu-bar");
+                        const morebar = document.querySelector(".more-bar");
+                        const moreitem = document.querySelector(".more-items");
+                        const back = document.querySelector(".arrow");
+                        dropbtn.onclick= (()=>{
+                            menuwrap.classList.toggle("show");
+                            morebar.style.display = "none";
+                            menubar.style.marginLeft = "0px";
+                        });
+                        moreitem.onclick= (()=>{
+                            menubar.style.marginLeft = "-200px";
+                            morebar.style.display = "block";
+                        });
+                        back.onclick= (()=>{
+                            menubar.style.marginLeft = "0px";
+                            morebar.style.display = "none";
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <a href="https://uccd2223-cytokine.azurewebsites.net/7355608.html">Music</a>
+            <a href="https://uccd2223-cytokine.azurewebsites.net/about.html">About</a>
+            <a class="leftflex" href="https://cytokine.cc" target="_blank"
+            style="float:right; padding-right: 0px;">Cytokine Corporations
+                <i style="font-size: 14px; margin:0px; padding:0px; width: 35px;" 
+                class="fa fa-external-link"></i>
+            </a>
+
+            <!-- <div class="dropdown">
                 <div onclick="location.href='https://uccd2223-cytokine.azurewebsites.net/labportal.html'" 
                 class="dropbtn" style="cursor: pointer;">Labs 
                     <i style="font-size: 14px; margin:0px; padding:0px; padding-bottom: 10px;"
@@ -145,14 +217,7 @@
                     <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab5.html">Lab 5</a>
                     <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab6.html">Lab 6</a>
                 </div>
-            </div> 
-            <a href="https://uccd2223-cytokine.azurewebsites.net/7355608.html">Music</a>
-            <a href="https://uccd2223-cytokine.azurewebsites.net/about.html">About</a>
-            <a class="leftflex" href="https://cytokine.cc" target="_blank"
-            style="float:right; padding-right: 0px;">Cytokine Corporations
-                <i style="font-size: 14px; margin:0px; padding:0px; width: 35px;" 
-                class="fa fa-external-link"></i>
-            </a>
+            </div>  -->
         </div>
 
         <div class="hero-txt">
@@ -171,11 +236,11 @@
     background:rgb(68, 67, 67);">
         <div style="display:flex; flex-direction: column;
          align-items: center; justify-content: center;">
-            <div style="margin: 30px;">
+            <div id="bloc1" style="display:flex; flex-direction: column;">
                 <img class="image1" src="img/Cytokine_Logo_White.png">
-                <h1 id="header01" style="margin-top: 50px;">
+                <h1 id="header01" style="font-weight: bold;">
                     UCCCD2223 Cytokine WebDev
-                </h1>
+                <h1>
             </div>
             <div style="text-align: justify;"> 
                 <hr style="color:white; margin-left: 50px; margin-right: 50px;">
@@ -270,10 +335,12 @@
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = "0";
             document.getElementById("dropbar").style.top = "0";
+            menuwrap.classList.remove("show");
         } 
         else {
             document.getElementById("navbar").style.top = "-50px";
             document.getElementById("dropbar").style.top = "-50px";
+            menuwrap.classList.remove("show");
         }
             prevScrollpos = currentScrollPos;
         }

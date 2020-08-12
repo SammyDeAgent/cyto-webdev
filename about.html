@@ -212,21 +212,58 @@
         <div id="navbar">
             <a style="padding-left:10px"><img src ="img/Cytokine_Logo_White.png" style="max-width: 25px;"></a>
             <a href="https://uccd2223-cytokine.azurewebsites.net/">Main</a>
+            
             <div class="dropdown">
-                <div onclick="location.href='https://uccd2223-cytokine.azurewebsites.net/labportal.html'" 
-                class="dropbtn" style="cursor: pointer;">Labs 
-                    <i style="font-size: 14px; margin:0px; padding:0px; padding-bottom: 10px;"
-                    class="fa fa-caret-down"></i>
+                <div class="dropbtn">Labs<i class="fa fa-caret-down"></i></div>
+                <div class="wrapper">
+                    <ul class="menu-bar">
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Lab Portal</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/myfirstpage.html">Lab 1</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab2.html">Lab 2</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab3.html">Lab 3</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab4.html">Lab 4</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab5.html">Lab 5</a></li>
+                        <li><a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab6.html">Lab 6</a></li>
+                        <li class="more-items">More<i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+
+                    <!-- More Menu -->
+                    <ul class="more-bar">
+                        <li class="arrow" style="padding-bottom: 10px;"><span class="fa fa-arrow-left"></span>Previous</li>
+                        <li><a href="">Lab 7</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                        <li><a href="">WIP</a></li>
+                    </ul>
+
+                    <!-- Script for the dropdown -->
+                    <script>
+                        const dropbtn = document.querySelector(".dropbtn");
+                        const menuwrap = document.querySelector(".wrapper");
+                        const menubar = document.querySelector(".menu-bar");
+                        const morebar = document.querySelector(".more-bar");
+                        const moreitem = document.querySelector(".more-items");
+                        const back = document.querySelector(".arrow");
+                        dropbtn.onclick= (()=>{
+                            menuwrap.classList.toggle("show");
+                            morebar.style.display = "none";
+                            menubar.style.marginLeft = "0px";
+                        });
+                        moreitem.onclick= (()=>{
+                            menubar.style.marginLeft = "-200px";
+                            morebar.style.display = "block";
+                        });
+                        back.onclick= (()=>{
+                            menubar.style.marginLeft = "0px";
+                            morebar.style.display = "none";
+                        });
+                    </script>
                 </div>
-                <div class="dropdown-content">
-                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/myfirstpage.html">Lab 1</a>
-                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab2.html">Lab 2</a>
-                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab3.html">Lab 3</a>
-                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab4.html">Lab 4</a>
-                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab5.html">Lab 5</a>
-                  <a href="https://uccd2223-cytokine.azurewebsites.net/labs/lab6.html">Lab 6</a>
-                </div>
-            </div> 
+            </div>
+
             <a href="https://uccd2223-cytokine.azurewebsites.net/7355608.html">Music</a>
             <a class="active" href="https://uccd2223-cytokine.azurewebsites.net/about.html">About</a>
             <a class="leftflex" href="https://cytokine.cc/" target="_blank"
@@ -322,10 +359,12 @@
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = "0";
             document.getElementById("dropbar").style.top = "0";
+            menuwrap.classList.remove("show");
         } 
         else {
             document.getElementById("navbar").style.top = "-50px";
             document.getElementById("dropbar").style.top = "-50px";
+            menuwrap.classList.remove("show");
         }
             prevScrollpos = currentScrollPos;
         }
