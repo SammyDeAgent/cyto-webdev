@@ -375,7 +375,7 @@
 				for(var i = 0; i < record.length;i++){
 					if(record[i].mdp > stats[0])
 						stats[0] = record[i].mdp;
-					else if(record[i].mdp < stats[1])
+					if(record[i].mdp < stats[1])
 						stats[1] = record[i].mdp;
 				}
 				return stats;
