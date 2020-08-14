@@ -41,7 +41,25 @@
     <meta itemprop="image" content="https://uccd2223-cytokine.azurewebsites.net/img/cytov2.png" />
     
     <!-- External Files and Plugins -->
-    <link rel="stylesheet"     href="../css/index_style.css"/>
+	<link rel="stylesheet"     href="../css/index_style.css"/>
+	<script src="../js/jquery-3.5.1.js"></script>
+	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+	<!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="../css/bootstrap_table.css"> -->
+    <script src="../js/bootstrap.min.js"></script>
+
+	<style>
+        code{
+          display:block;
+		  overflow:scroll;
+          box-sizing: border-box;
+          border: 3px outset silver;
+          padding: 10px;
+          margin-top: 5px;
+          color: chartreuse;
+          background-color: black;
+        }
+    </style>
 
 </head>
 <body>
@@ -54,6 +72,317 @@
         <div class ="topnav">
             <a href="https://uccd2223-cytokine.azurewebsites.net/labportal.html">Back</a>
         </div>
-    </div>
+	</div>
+	
+	<style>
+        input[type=text], select {
+            width: 300px;
+        }
+	</style>
+	
+	<div class="card">
+		<h1>Exercise 1</h1>
+
+		<h3>Creating a javascript object via inputs</h3>
+		<form id="f1" onsubmit="addFunction(event)">
+			<table>
+				<tr>
+					<td><label>Full Name: </label></td>
+					<td><input type="text" id="fname" required></td>
+				</tr>
+				<tr>
+					<td><label>Student ID: </label</td>
+					<td><input type="text" id="stuID" required></td>
+				</tr>
+				<tr>
+					<td><label>Gender: </label</td>
+					<td><select id="gender" required>
+						<option disabled selected value>Select a gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Others</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label>Race: </label</td>
+					<td><select id="race" required>
+						<option disabled selected value>Select a race</option>
+						<option value="malay">Malay</option>
+						<option value="chinese">Chinese</option>
+						<option value="indian">Indian</option>
+						<option value="sikh">Sikh</option>
+						<option value="caucasian">Caucasian</option>
+						<option value="afro-negro">Afro-Negro</option>
+						<option value="other">Others</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label>Faculty: </label</td>
+					<td><input type="text" id="faculty" required></td>
+				</tr>
+				<tr>
+					<td><label>Programme: </label</td>
+					<td><input type="text" id="programme" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</form>
+		<code><pre><p id="ex1-1">Awaiting initialization...</p></pre></code>
+		<script>
+			function addFunction(event) {
+				event.preventDefault();
+
+				var fName = document.getElementById("fname").value;
+				var sId = document.getElementById("stuID").value;
+				var gender = document.getElementById("gender").value;
+				var race = document.getElementById("race").value;
+				var faculty = document.getElementById("faculty").value;
+				var programme = document.getElementById("programme").value;
+
+				var student = { FullName: fName, StudentID: sId, Gender: gender, Race: race, Faculty: faculty, Programme: programme};
+				
+				document.getElementById("ex1-1").innerHTML = "";
+				for(var key in student){
+					(key=="Gender" || key=="Race") ?
+						document.getElementById("ex1-1").innerHTML += key + ":		" + student[key] + "<br>"
+					:
+						document.getElementById("ex1-1").innerHTML += key + ":	" + student[key] + "<br>";
+				};
+			}
+		</script><br>
+
+		<h3>Parking Fee Calculator - Javascript Object Array</h3>
+		<form id="f2">
+			<table>
+				<tr>
+					<td><label>Car Plate: </label></td>
+					<td><input type="text" id="carplate" required></td>
+				</tr>
+				<tr>
+					<td><label>Hours Parked: </label></td>
+					<td><input type="text" id="hours" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</form>
+		<code><pre><p id="ex1-2">Awaiting initialization...</p></pre></code>
+		<script>
+			var objArray = [];
+
+			$(function(){
+				$("#f2").submit(function(event){
+					event.preventDefault();
+
+					var plate = $("#carplate").val();
+					var hours = parseFloat($("#hours").val());
+
+					var obj = new Object();
+					obj.CarPlate = plate;
+					obj.ParkingHours = hours;
+					obj.Charges = calcCharges(hours);
+
+					objArray.push(obj);
+
+					objArray.sort((a,b) => a.ParkingHours - b.ParkingHours);
+					
+					objArray.reverse();
+
+					$("#ex1-2").html("Parking Charges Cache:<br>>> Car Plate	Hours	Charge<br>");
+					for( var i = 0; i < objArray.length; i++){
+						$("#ex1-2").append(">> " + objArray[i].CarPlate + "	" + objArray[i].ParkingHours + "	" + objArray[i].Charges + "<br>")
+					};
+
+					$("#carplate").val("");
+					$("#hours").val("")
+				});
+			});
+
+			function calcCharges(hours){
+				var charge = 0.0;
+				if( hours > 0.0 && hours <= 3.0)
+					charge = 2.0;
+				else if(hours >3.0){
+					charge = 2.0 + 0.5*Math.ceil(hours-3.0);
+					if(charge>10.0)
+						charge = 10.0;
+				};
+				return charge;
+			}
+		</script><br>
+
+		<!-- 2 methods: getJSON() or AJAX -->
+		<h3>Getting JSON Object from web server</h3>
+		<p>JSON String Output</p>
+		<code><pre><p id="ex3-1">Awaiting initialization...</p></pre></code>
+		<p>JSON Table Output</p>
+		<code>
+		<table border="1" id="tb1">
+			<thead>
+				<tr>
+					<th>Squad Name</th>
+					<th>Home Town</th>
+					<th>Formed</th>
+					<th>Secret Base</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		</code><br>
+		<button id="btn1">GET JSON</button>
+		<script>
+			$(function(){
+				$("#btn1").click(function(event){
+					// getJSON Method
+					// var API = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+					// $.getJSON(API)
+					// 	.done(function(data){
+					// 		$("#ex3-1").html(JSON.stringify(data));
+					// 		$("#tb1 tbody").append(
+					// 			"<tr><td>" + data.squadName + "</td><td>" +
+					// 			data.homeTown + "</td><td>" +
+					// 			data.formed + "</td><td>" +
+					// 			data.secretBase + "</td></tr>"
+					// 		)
+					// 	})
+
+					// AJAX Method
+					$.ajax({
+						method: "GET",
+						url: "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json",       
+					})
+					.done(function(data){
+						$("#ex3-1").html(JSON.stringify(data));
+						$("#tb1 tbody").append("<tr><td>"
+                    	+ data.squadName + "</td><td >" +
+                    	data.homeTown + "</td><td>" +
+                    	data.formed + "</td><td>"
+                   		+ data.secretBase + "</td></tr>")
+					});
+				})
+			})
+		</script>
+	</div>
+
+	<div class="card">
+		<h1>Exercise 2</h1>
+		<h3>Retail Price Calculator</h3>
+		<form id="rpc">
+			<table>
+				<tr>
+					<td><label>Cost: </label></td>
+					<td><input type="text" id="cost" required></td>
+				</tr>
+				<tr>
+					<td><label>Markup Percentage: </label></td>
+					<td><input type="text" id="mdp" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Calculate"></td>
+				</tr>
+			</table>
+		</form><br>
+
+		<style>
+			/* BootStrap Table */
+			.table{width:100%;margin-bottom:1rem;color:#212529;border-spacing: 0;}
+			.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #aaacad; text-align: left}
+			.table thead th{vertical-align:bottom;border-bottom:2px solid #aaacad;}
+			.table tbody+tbody{border-top:2px solid #aaacad}
+			.table .thead-dark th{color:#fff;background-color:#161616;border-color:#454d55; text-align: left;}
+			.table-striped tbody tr:nth-of-type(odd){background-color:rgba(32, 226, 21, 0.728)}
+		</style>
+
+		<table class="table table-striped">
+			<thead class="thead-dark">
+            	<th scope = "col">#</th>
+            	<th scope = "col">Cost (RM)</th>
+            	<th scope = "col">Markup Percentage (%)</th>
+            	<th scope = "col">Retail Price (RM)</th>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<code><pre><p id="ex2">Awaiting initialization...</p></pre></code>
+		</div>
+	</div>
+	<script>
+		var record = [];
+		$(function(){
+			$("#rpc").submit(function(event){
+				event.preventDefault();
+				
+				var cost = parseFloat($("#cost").val());
+				var mdp = parseFloat($("#mdp").val());
+				$(".table tbody").html("");
+
+				if(valid(cost,mdp))	{
+					var retail = cost + cost*(mdp/100);
+
+					var obj = new Object();
+					obj.cost = cost.toFixed(2);
+					obj.mdp = mdp.toFixed(2);
+					obj.retail = retail.toFixed(2);
+					record.push(obj);
+
+					tableP();
+				} else {
+					tableP();
+					window.alert("Duplicated cost and merkup percentage has been detected! Use a different value.");
+				}
+				var stats = mdpRange(record);
+				max = stats[0];
+				min = stats[1];
+				$("#ex2").html("The highest markup percentage is " + max + " and the lowest is " + min + ".");
+			})
+		})
+
+		function valid(cost,mdp) {
+        	for(var i = 0; i < record.length; i ++) {
+            	if(cost == parseFloat(record[i].cost) && mdp == parseFloat(record[i].mdp))
+                	return false;
+        	}
+        	return true;
+		}
+		
+		function tableP(){
+			for(var i = 0; i < record.length; i++){
+				$(".table tbody").append(
+					"<tr>" +
+					"<th scope='row'>" + (i+1) + "</th>" +
+					"<td>" + record[i].cost + "</td>" +
+					"<td>" + record[i].mdp + "</td>" +
+					"<td>" + record[i].retail + "</td>" +
+					"</tr>"
+				);
+			}
+		}
+
+		function mdpRange(record){
+			// axis 0 = max, axis 1 = min
+			var stats = [2];
+			stats[0] = 0;
+			stats[1] = 0;
+			if(record.length != 0){
+				stats[0] = record[0].mdp;
+				stats[1] = record[0].mdp;
+				for(var i = 0; i < record.length;i++){
+					if(record[i].mdp > stats[0])
+						stats[0] = record[i].mdp;
+					else if(record[i].mdp < stats[1])
+						stats[1] = record[i].mdp;
+				}
+				return stats;
+			}else
+				return stats;
+		}
+	</script>
+	<div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
 </body>
 </html>
