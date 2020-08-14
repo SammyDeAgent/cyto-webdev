@@ -314,6 +314,9 @@
 	</div>
 	<script>
 		var record = [];
+		var stats = [2];
+		stats[0] = 0.0; //min mdp
+		stats[1] = 0.0; //max mdp
 		$(function(){
 			$("#rpc").submit(function(event){
 				event.preventDefault();
@@ -336,10 +339,7 @@
 					tableP();
 					window.alert("Duplicated cost and merkup percentage has been detected! Use a different value.");
 				}
-				var stats = mdpRange(record);
-				max = stats[0];
-				min = stats[1];
-				$("#ex2").html("The highest markup percentage is " + max + " and the lowest is " + min + ".");
+				mdpRange(record, stats);
 
 				$("#cost").val("");
 				$("#mdp").val("");
@@ -367,23 +367,24 @@
 			}
 		}
 
-		function mdpRange(record){
-			// axis 0 = max, axis 1 = min
-			var stats = [2];
-			stats[0] = 0;
-			stats[1] = 0;
-			if(record.length != 0){
-				stats[0] = record[0].mdp;
-				stats[1] = record[0].mdp;
-				for(var i = 0; i < record.length;i++){
-					if(record[i].mdp > stats[0])
-						stats[0] = record[i].mdp;
-					if(record[i].mdp < stats[1])
+		function mdpRange(record, stats){
+			// stats 0 = min, stats 1 = max
+			if(record.length == 1){
+				stats[1] = parseFloat(record[0].mdp);
+				stats[0] = parseFloat(record[0].mdp);
+				$("#ex2").html('The highest markup percentage is ' + stats[1] + ' and the lowest is ' + stats[0]);
+			}
+			else if(record.length != 0){
+				for(var i = 0; i < record.length; i++){
+					if(parseFloat(record[i].mdp) > parseFloat(stats[1])){
 						stats[1] = record[i].mdp;
+					}	
+					if(parseFloat(record[i].mdp) < parseFloat(stats[0])){
+						stats[0] = record[i].mdp;
+					}
 				}
-				return stats;
-			}else
-				return stats;
+				$("#ex2").html('The highest markup percentage is ' + stats[1] + ' and the lowest is ' + stats[0]);
+			}
 		}
 	</script>
 	<div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
