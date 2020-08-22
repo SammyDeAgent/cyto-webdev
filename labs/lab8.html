@@ -74,6 +74,173 @@
         </div>
 	</div>
 	
+	<div class="card">
+		<h1>Exercise 1</h1>
+		<h3>JavaScript Cookies</h3>
+		<form id="f1-1">
+			<table>
+				<tr>
+					<td>Email: </td>
+					<td><input type="email" id="email" placeholder="example@email.com" required></td>
+				</tr>
+				<tr>
+					<td>Password: </td>
+					<td><input type="password" id="password" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"><input type="button" value="Check Cookies" id="btn1-1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<warning> *Submission will redirect to a new page</warning>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			$(function () {
+				$("#f1-1").submit(function (event) {
+					event.preventDefault();
+
+					var email = $("#email").val();
+					var pass = $("#password").val();
+					var expDate = new Date();
+
+					expDate.setMinutes(expDate.getMinutes() + 5);
+					document.cookie = "email=" + email + "; expires=" + expDate.toUTCString();
+					document.cookie = "password=" + pass + "; expires=" + expDate.toUTCString();
+					window.location.href = "lab8-cookies.html";
+				})
+				$("#btn1-1").on("click", function () {
+					window.location.href = "lab8-cookies.html";
+				})
+			})
+		</script><br>
+
+		<h3>JavaScript Web Storage</h3>
+		<form id="f1-2">
+			<table>
+				<tr>
+					<td>Name: </td>
+					<td><input type="text" id="name" required></td>
+				</tr>
+				<tr>
+					<td>Phone: </td>
+					<td><input type="tel" id="phone" placeholder="XXX-XXXXXXX" pattern="\d{3}-\d{7,8}" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"><input type="button" value="Check Web Storage" id="btn1-2">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<warning> *Submission will redirect to a new page</warning>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			$(function () {
+				$("#f1-2").submit(function (event) {
+					event.preventDefault();
+
+					var name = $("#name").val();
+					var phone = $("#phone").val();
+
+					if (typeof (Storage) !== "undefined") {
+
+						localStorage.setItem("User", name);
+						sessionStorage.setItem("Phone", phone);
+						window.location.href = "lab8-webstorage.html";
+					}
+
+				});
+				$("#btn1-2").on("click", function () {
+					window.location.href = "lab8-webstorage1.html";
+				})
+			});
+		</script><br>
+
+		<h3>JSON Retrieval</h3>
+
+		<style>
+			/* BootStrap Table */
+			.table {
+				width: 100%;
+				margin-bottom: 1rem;
+				color: #212529;
+				border-spacing: 0;
+			}
+
+			.table td,
+			.table th {
+				padding: .75rem;
+				vertical-align: top;
+				border-top: 1px solid #aaacad;
+				text-align: left
+			}
+
+			.table thead th {
+				vertical-align: bottom;
+				border-bottom: 2px solid #aaacad;
+			}
+
+			.table tbody+tbody {
+				border-top: 2px solid #aaacad
+			}
+
+			.table .thead-dark th {
+				color: #fff;
+				background-color: #161616;
+				border-color: #454d55;
+				text-align: left;
+			}
+
+			/* .table-striped tbody tr:nth-of-type(odd){background-color:rgba(32, 226, 21, 0.728)} */
+		</style>
+
+		<table id="tb1-3" class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Age</th>
+					<th scope="col">Secret Identity</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<script>
+			//XMLHTTP Method
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					var myObj = JSON.parse(this.responseText);
+					for (let i = 0; i < myObj.members.length; i++) {
+						var table = document.getElementById("tb1-3");
+						var row = table.insertRow(i + 1);
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						cell1.innerHTML = myObj.members[i].name;
+						cell2.innerHTML = myObj.members[i].age;
+						cell3.innerHTML = myObj.members[i].secretIdentity;
+					}
+				}
+			};
+			xmlhttp.open("GET", "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json", true);
+			xmlhttp.send();
+		</script><br>
+
+		<h3>JSON Creation</h3>
+
+
+
+	</div>
+
 
 	<div class = "footer">@Terms and conditions apply, all rights reserved to Cytokine Corporations</div>
 </body>
