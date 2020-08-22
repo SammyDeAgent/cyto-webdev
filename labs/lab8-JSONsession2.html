@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 Big Data JSON and Sorting</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        /* BootStrap Table */
+        .table{width:100%;margin-bottom:1rem;color:#212529;border-spacing: 0;}
+        .table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #aaacad; text-align: left}
+        .table thead th{vertical-align:bottom;border-bottom:2px solid #aaacad;}
+        .table tbody+tbody{border-top:2px solid #aaacad}
+        .table .thead-dark th{color:#fff;background-color:#161616;border-color:#454d55; text-align: left;}
+        .table-striped tbody tr:nth-of-type(odd){background-color:rgba(32, 226, 21, 0.728)}
+    </style>
+
+    <h1>JSON 2</h1>
+    <table id="tb1" class="table">
+        <thead class='thead-dark'>
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Count</th>
+            </tr>
+            <tbody></tbody>
+        </thead>
+    </table>
+    <script>
+        $(function () {
+            var items = JSON.parse(sessionStorage.getItem("BigItems"));
+            if (typeof (Storage) !== "undefined") {
+            sortResults("item",false);
+            for(let i = 0; i < items.length; i++){
+					$("#tb1 tbody").append(
+						"<tr><td>" + items[i].item + "</td><td>" +
+                        items[i].count + "</td></tr>"
+					)
+				}
+            }
+            function sortResults(prop, asc) {
+            items.sort(function(a, b) {
+                if (asc)
+                    return (a[prop].toLowerCase() > b[prop].toLowerCase()) ? 1 : ((a[prop].toLowerCase() < b[prop].toLowerCase()) ? -1 : 0);
+                else
+                    return (b[prop].toLowerCase() > a[prop].toLowerCase()) ? 1 : ((b[prop].toLowerCase() < a[prop].toLowerCase()) ? -1 : 0);
+                 })
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

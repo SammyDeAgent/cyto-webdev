@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 JSON Session Storage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>JSON</h1>
+    <p id="p1"></p>
+    <script>
+        $(function () {
+
+            if (typeof (Storage) !== "undefined") {
+                var user = JSON.parse(sessionStorage.getItem("UserInfo"));
+                $("#p1").html(
+                    user.name + " " + user.age + '<br>' +
+                    "<b>" + user.car + "</b><br>" + 
+                    user.address.street + ", " + user.address.city + "<br>"
+                );
+                for(let i =0;i<user.hobbies.length;i++){
+                    $("#p1").append(
+                        "<i>" + user.hobbies[i] + " <i>"
+                    )
+                }
+            }else{
+                $("#p1").html("undefined");
+            }
+        });
+    </script>
+</body>
+
+</html>

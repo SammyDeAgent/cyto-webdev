@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 Web Storage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1></h1>
+ 
+    <script> 
+        $(function () {
+
+            if (typeof (Storage) !== "undefined") {
+               
+                $("h1").html(
+                    "Local Storage: " + localStorage.getItem("User") + "<br>" +
+                    "Session Storage: " + sessionStorage.getItem("Phone"));
+
+            }
+    });
+  </script> 
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 Cookies</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1></h1>
+ 
+    <script> 
+        $(document).ready(function () {
+
+            var email = getCookie("email");
+            var password = getCookie("password");
+
+
+            if (email != null && password != null) {
+
+                $("h1").text("Cookies: " + email + " " + password);
+            }
+            else
+                window.location.href = "lab8.html";
+        }); 
+        function getCookie(cname) {
+                  var name = cname + "=";
+                  var ca = document.cookie.split(';');
+                  for (var i = 0; i < ca.length; i++) {
+                      var c = ca[i];
+                      while (c.charAt(0) == ' ') {
+                          c = c.substring(1);
+                      }
+                      if (c.indexOf(name) == 0) {
+                          return c.substring(name.length, c.length);
+                      }
+                  }
+                  return null;
+        }
+    </script>
+</body>
+</html>
