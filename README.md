@@ -6,7 +6,7 @@ Contributors:
 
 Azure URL
 ```
-https://uccd2223-cytokine.azurewebsites.net [DEAD]
+https://sammydeagent.github.io/cyto-webdev/
 ```
 
 **Git Commands**
